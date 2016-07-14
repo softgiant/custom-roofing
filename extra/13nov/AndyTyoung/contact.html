@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome | Contact Us</title>
+<!--====== JS File ======-->
+<script type="text/javascript" src="js/jquery.1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/html5shiv.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script>
+      $(window).load(function() {
+		$('.flexslider').flexslider({
+		  animation: "slide",
+		  controlNav: false
+		});
+	  });
+	  $(document).ready(function() {
+		 $('.mob-nav').click(function(){
+		   $('.nav').slideToggle();			  
+		 });
+		 
+		 //====== Roofing Services Image Modal ======// 
+		 $('a.imgModal').click(function(){
+			 var imgSrc = $(this).children('img').attr('src'); //console.log(imgSrc);
+			 $('.customModal').css({display:'block'});
+			 $('.customModal').animate({opacity:1},400);
+			 setTimeout(function(){
+				 $('.customModal').children('.modalContainer').children('img').attr('src', imgSrc);
+				 $('.customModal').children('.modalContainer').css('transform','scale(1)');
+			 },300);
+			 $('.crossBtn').click(function(){
+				  $('.customModal').children('.modalContainer').css('transform','scale(0)');
+				 setTimeout(function(){
+					 $('.customModal').animate({opacity:0},320);
+					 setTimeout(function(){
+					 	$('.customModal').css({display:'none'});
+				 	 },380);
+				 },280);
+			 });
+		 });
+	  });
+</script>
+<!--====== CSS File ======-->
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+<div class="top-sec">
+  <ul>
+    <li class="divide"><span><i class="fa fa-phone"></i></span>01204 391981</li>
+    <li><span><i class="fa fa-mobile"></i></span>07737 628453</li>
+    <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+  </ul>
+</div>
+<!--=== Top Section End Here ===-->
+<div class="nav-sec">
+  <div class="nav-wrapper clearfix">
+    <div class="logo"><a href="#"><img src="images/logo.png" alt="" title=""></a></div>
+    <div class="mob-nav"><i class="fa fa-bars"></i></div>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="about.html">About Us</a></li>
+        <li><a href="roofing-services.html">Roofing Services</a>
+        <ul>
+        <li><a href="#">Sub Item</a></li>
+        <li><a href="#">Sub Item</a></li>
+        </ul>
+        </li>
+        
+        <li><a href="#">Pointing Services</a></li>
+        <li><a href="happy-customers.html">Happy Customers</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <!--=== Nav End Here ===--> 
+  </div>
+  <!--=== Nav Wrapper End here ===--> 
+</div>
+<!--=== Nav Section End Here ===-->
+<div class="top-heading">
+  <h2>CONTACT <span>US</span></h2>
+  <div class="bread">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><span>/</span></li>
+      <li>Contact Us</li>
+    </ul>
+  </div>
+  <!--=== Bread End Here ===--> 
+</div>
+<div class="cont-sec clearfix">
+  <div class="contactMap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1184.7062290483184!2d-2.43429441884256!3d53.56825507564713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba7b300e87d1b%3A0x5cd1c0c40ed6c33a!2sThe+Trinity%2C+Bridgeman+St%2C+Bolton+BL3+6RS%2C+UK!5e0!3m2!1sen!2sin!4v1447399310617" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <div class="cont-sec-left inner">
+    <h3>Contact Form</h3>
+    <p>To request a free no-obligation quotation please complete the short enquiry form below and we will respond as quickly as possible</p>
+    
+    <form class="contactForm">
+  <div class="formField">    
+    <input type="text" class="inputBox" placeholder="Name">
+  </div>
+  <div class="formField">    
+    <input type="text" class="inputBox" placeholder="Email">
+  </div> 
+  <div class="formField">    
+    <input type="text" class="inputBox" placeholder="Phone">
+  </div>
+  <div class="formField">    
+    <textarea class="inputTextarea" placeholder="Job Location"></textarea>
+  </div>
+  <div class="formField">    
+    <textarea class="inputTextarea" placeholder="Description"></textarea>
+  </div>
+  <button type="submit" class="sendMessageBtn">Send Message</button>
+</form>
+    
+    
+    
+  </div>
+  <!--=== Cont Section Left End Here ===-->
+  <div class="cont-sec-right">
+    <h2>Contact Information</h2>
+    <address>
+    36 The Trinity<br>
+    Bridgeman Street<br>
+    Bolton, Lancashire<br>
+    BL3 6RS<br>
+    <br>
+    <i class="fa fa-phone"></i>01204 391981<br>
+    <i class="fa fa-mobile"></i>07737 628453<br>
+    <br>
+    Email: info@roofingandpointing.co.uk
+    </address>
+  </div>
+  <!--=== Content Section Right End Here ===--> 
+</div>
+<!--=== Content Section End Here ===-->
+<div class="footer-wrapper">
+  <div class="footer">
+    <div class="footer-div">
+      <h2>SITE LINKS</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Happy Customers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <h3>Contact US <span><a target="_blank" href="#"><i class="fa fa-facebook-square"></i></a></span></h3>
+      <p><i class="fa fa-phone"></i>01204 391981</p>
+      <p><i class="fa fa-mobile"></i> 07737 628453</p>
+      <p>Email: <a href="mailto:info@roofingandpointing.co.uk">info@roofingandpointing.co.uk</a></p>
+    </div>
+    <!--=== Footer Div End Here ===-->
+    <div class="footer-div bdr-left">
+      <h2>Roofing Services</h2>
+      <ul>
+        <li><a href="#">All roofing work carried out</a></li>
+        <li><a href="#">Slated & tiles roofing & repairs</a></li>
+        <li><a href="#">Pitch roofs & flat roofs</a></li>
+        <li><a href="#">Chimney building/repair</a></li>
+        <li><a href="#">New/replacement guttering</a></li>
+        <li><a href="#">Fascias soffits & cladding replaced</a></li>
+        <li><a href="#">All types of guttering</a></li>
+        <li><a href="#">Leadwork, zinc & metal roofs</a></li>
+        <li><a href="#">Roofs and guttering cleaning</a></li>
+      </ul>
+    </div>
+    <!--=== Footer Div End Here ===-->
+    <div class="footer-div ex">
+      <h2>Pointing Services </h2>
+      <ul>
+        <li><a href="#">All pointing work carried out</a></li>
+        <li><a href="#">Full or part house pointing</a></li>
+        <li><a href="#">Pitch roofs & flat roofs</a></li>
+        <li><a href="#">Chimney pointing</a></li>
+        <li><a href="#">Re-bedding of ridge tiles</a></li>
+      </ul>
+    </div>
+    <!--=== Footer Div End Here ===-->
+    <div class="footer-div ex bdr-left">
+      <h2>AREAS WE COVER</h2>
+      <ul>
+        <li><a href="#">Bolton</a></li>
+        <li><a href="#">Manchester</a></li>
+        <li><a href="#">Wigan</a></li>
+        <li><a href="#">Preston</a></li>
+        <li><a href="#">Bury</a></li>
+        <li><a href="#">Westhoughton</a></li>
+        <li><a href="#">Horwich</a></li>
+        <li><a href="#">Blackrod</a></li>
+        <li><a href="#">Radcliffe</a></li>
+      </ul>
+    </div>
+    <!--=== Footer Div End Here ===--> 
+  </div>
+  <!--=== Footer End Here ===-->
+  <div class="footer-bottom">Copyright © 2015 Andy T. Young Builders. All Rights Reserved</div>
+</div>
+<!--=== Footer Wrapper End Here ===-->
+</body>
+</html>

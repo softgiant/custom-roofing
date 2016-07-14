@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+ * jQuery FlexSlider v2.2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+
+/* Browser Resets
+*********************************/
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* Icon Fonts
+*********************************/
+/* Font-face Icons */
+@font-face {
+	font-family: 'flexslider-icon';
+	src:url('fonts/flexslider-icon.eot');
+	src:url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/flexslider-icon.woff') format('woff'),
+		url('fonts/flexslider-icon.ttf') format('truetype'),
+		url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; position:relative;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider { margin: 0px 0 0px 0; background: none !important; border: 0px solid #fff; position: relative; -webkit-border-radius: 0px; -moz-border-radius: 4px; -o-border-radius: 0px; border-radius: 0px; width:100%; }
+.flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.loading .flex-viewport { max-height: 300px; }
+.flexslider .slides { zoom: 1; }
+.carousel li { margin-right: 5px; }
+
+/* Direction Nav */
+.flex-direction-nav {*height: 0;}
+.flex-direction-nav a  { text-decoration:none; display: block; width: 40px; height: 40px; margin: -20px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 0; cursor: pointer; color: rgba(0,0,0,0.8); text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
+.flex-direction-nav .flex-prev { left: -50px; background:url(../images/prev.png); width:38px; height:38px;}
+.flex-direction-nav .flex-next { right: -50px; text-align: right;background:url(../images/next.png); width:38px; height:38px; }
+.flexslider:hover .flex-prev { opacity: 0.7; left: 10px; }
+.flexslider:hover .flex-next { opacity: 0.7; right: 10px; }
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
+.flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+.flex-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 40px; line-height:1; display: inline-block; /*content: '\f001';*/ }
+.flex-direction-nav a.flex-next:before  { /*content: '\f002';*/ }
+
+/* Pause/Play */
+.flex-pauseplay a { display: block; width: 20px; height: 20px; position: absolute; bottom: 5px; left: 10px; opacity: 0.8; z-index: 10; overflow: hidden; cursor: pointer; color: #000; }
+.flex-pauseplay a:before  { font-family: "flexslider-icon"; font-size: 20px; display: inline-block; content: '\f004'; }
+.flex-pauseplay a:hover  { opacity: 1; }
+.flex-pauseplay a.flex-play:before { content: '\f003'; }
+
+/* Control Nav */
+.flex-control-nav {width: 15%; position: absolute; bottom: 30px; text-align: left; right:32px; z-index:9999!important}
+.flex-control-nav li {margin: 0 3px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-paging li a {width: 13px; height: 13px; display: block; background: #179354;background:url(../images/dot.png) no-repeat; cursor: pointer; text-indent: -9999px;}
+.flex-control-paging li a:hover { background:url(../images/dot_hover.png) no-repeat; }
+.flex-control-paging li a.flex-active { background:url(../images/dot_hover.png) no-repeat; /*background: rgba(0,0,0,0.9);*/ cursor: default; }
+
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+.flex_text{ position:absolute; right:0;  border-radius:5px 0 0 5px; padding-left:0px; z-index:9999; padding-bottom:0px; width:100%; text-align:center;bottom: 50px;}
+/*.flex_text h3{ font:bold 49px/34px 'Open Sans'; color:#fff; padding-top:12px; background:url(../images/border_text1.jpg) no-repeat center bottom; padding-bottom:26px;}*/
+.flex_text h4{ font:300 30px/12px 'Open Sans'; color:#f9d90f; font-size:18px; line-height:25px; padding-top:20px; padding-bottom:10px;}
+.flex_text h6{ font:normal 11px/12px 'Open Sans'; color:#fff; padding-top:109px; letter-spacing:5px; text-transform:uppercase; margin:0;}
+.flex_text p{ color:#fff; font:300 13px/18px 'Open Sans';padding-top:0px; padding-bottom:10px; margin-right:0px;}
+.flex_text a{ display:block; text-align:center; background:url(../images/read_btn.png) no-repeat; color:#fff; font:300 18px/43px 'Open Sans'; width:195px; margin:0 auto; height:54px;}
+@media screen and (max-width: 1171px) {
+
+  .flexslider .slides img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+.flex_text h6{ font:normal 11px/12px 'Open Sans'; color:#fff; padding-top:23px; letter-spacing:5px; text-transform:uppercase; margin:0;}
+.flex_text h3{ /*font:bold 33px/41px 'Open Sans'; color:#fff;*/ padding-top:20px; /*background:url(../images/border_text1.jpg) no-repeat center bottom;*/ padding-bottom:12px;}
+.flex_text h4{ font:300 30px/12px 'Open Sans'; color:#f9d90f; font-size:18px; line-height:25px; padding-top:20px; padding-bottom:10px;}
+.flex_text {
+    border-radius: 5px 0 0 5px;
+    padding-bottom: 0;
+    padding-left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+.flex-control-nav {
+    bottom: 12px;
+    position: absolute;
+    right: 32px;
+    text-align: left;
+    width: 15%;
+    z-index: 9999 !important;
+}
+}
+@media screen and (max-width: 900px) {
+
+.flex_text p{ color:#fff; font:300 13px/18px 'Open Sans'; padding-bottom:10px; margin-right:0px; padding-top:20px;}
+.flex_text a{ display:none; text-align:center; background:url(../images/read_btn.png) no-repeat; color:#fff; font:300 18px/43px 'Open Sans'; width:195px; margin:0 auto;}
+.flex-control-nav {
+    bottom: 6px;
+    position: absolute;
+    right: 20px;
+    text-align: left;
+    width: 15%;
+    z-index: 9999 !important;
+}
+.flex_text p {
+    color: #fff;
+    font: 300 13px/18px "Open Sans";
+    margin-right: 0;
+    padding-bottom: 10px;
+    padding-top: 4px;
+}
+}
+@media screen and (max-width: 768px) {
+.flex_text h3{ display:none;}
+
+.flex_text h6{ font:normal 11px/12px 'Open Sans'; color:#fff; padding-top:30px; letter-spacing:5px; text-transform:uppercase; margin:0; display:none;}
+.flex_text p{ color:#fff; font:300 13px/18px 'Open Sans'; padding-bottom:10px; margin-right:0px; padding-top:30px;}
+.flex_text a{ display:block; text-align:center; background:url(../images/read_btn.png) no-repeat; color:#fff; font:300 16px/30px 'Open Sans'; width:124px; margin:0 auto; height:35px}
+.flex-control-nav {
+    bottom: 6px;
+    position: absolute;
+    right: 20px;
+    text-align: left;
+    width: 15%;
+    z-index: 9999 !important;
+}
+}
+@media screen and (max-width: 650px) {
+.flex_text h3{ display:none;}
+
+.flex_text h6{ font:normal 11px/12px 'Open Sans'; color:#fff; padding-top:30px; letter-spacing:5px; text-transform:uppercase; margin:0; display:none;}
+.flex_text p{ color:#fff; font:300 13px/18px 'Open Sans'; padding-bottom:10px; margin-right:0px; padding-top:10px; display:block;}
+.flex_text a{ display:block; text-align:center; background:url(../images/read_btn.png) no-repeat; color:#fff; font:300 18px/43px 'Open Sans'; width:195px; margin:0 auto; display:none;}
+.flex-control-nav {
+    bottom: 6px;
+    position: absolute;
+    right: 32px;
+    text-align: left;
+    width: 30%;
+    z-index: 9999 !important;
+}
+}
+@media screen and (max-width: 480px) {
+.flex_text h3{ display:none;}
+
+.flex_text h6{ font:normal 11px/12px 'Open Sans'; color:#fff; padding-top:30px; letter-spacing:5px; text-transform:uppercase; margin:0; display:none;}
+.flex_text p{ color:#fff; font:300 13px/18px 'Open Sans'; padding-bottom:10px; margin-right:0px; padding-top:30px; display:none;}
+.flex_text a{ display:block; text-align:center; background:url(../images/read_btn.png) no-repeat; color:#fff; font:300 18px/43px 'Open Sans'; width:195px; margin:0 auto; display:none;}
+.flex-control-nav {
+    bottom: 6px;
+    position: absolute;
+    right: 32px;
+    text-align: left;
+    width: 30%;
+    z-index: 9999 !important;
+}
+}

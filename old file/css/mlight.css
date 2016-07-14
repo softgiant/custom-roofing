@@ -1,0 +1,59 @@
+
+#lgbx,
+#lgbx_bcg { position: fixed }
+
+#lgbx_bcg {
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: rgba(0,0,0,0.8)
+}
+
+#lgbx {
+  background: #FFF;
+  padding: 5px;
+  z-index: 55;
+  top: 0;
+  left: 0
+}
+
+#lgbx_close,
+#lgbx_desc,
+#lgbx_next,
+#lgbx_prev {
+  position: absolute;
+  z-index: 56;
+  display: none
+}
+
+#lgbx_close {
+  z-index: 56;
+  right: 9px;
+  top: 9px;
+  cursor: pointer;
+  width: 15px
+}
+
+#lgbx_desc {
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #FFF;
+  padding: 5px 8px 1px;
+  font-size: 12px
+}
+
+#lgbx_next,
+#lgbx_prev {
+  cursor: pointer;
+  top: 50%;
+  margin-top: -20px;
+  height: 40px
+}
+
+#lgbx_next { right: 5px }
+
+#lgbx_prev { left: 5px }

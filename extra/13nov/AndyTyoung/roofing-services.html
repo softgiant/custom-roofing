@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome | Roofing Services</title>
+<!--====== JS File ======-->
+<script type="text/javascript" src="js/jquery.1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/html5shiv.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script>
+      $(window).load(function() {
+		$('.flexslider').flexslider({
+		  animation: "slide",
+		  controlNav: false
+		});
+	  });
+	  $(document).ready(function() {
+		 $('.mob-nav').click(function(){
+		   $('.nav').slideToggle();			  
+		 });
+		 
+		 //====== Roofing Services Image Modal ======// 
+		 $('a.imgModal').click(function(){
+			 var imgSrc = $(this).children('img').attr('src'); //console.log(imgSrc);
+			 $('.customModal').css({display:'block'});
+			 $('.customModal').animate({opacity:1},400);
+			 setTimeout(function(){
+				 $('.customModal').children('.modalContainer').children('img').attr('src', imgSrc);
+				 $('.customModal').children('.modalContainer').css('transform','scale(1)');
+			 },300);
+			 $('.crossBtn').click(function(){
+				  $('.customModal').children('.modalContainer').css('transform','scale(0)');
+				 setTimeout(function(){
+					 $('.customModal').animate({opacity:0},320);
+					 setTimeout(function(){
+					 	$('.customModal').css({display:'none'});
+				 	 },380);
+				 },280);
+			 });
+		 });
+	  });
+</script>
+<!--====== CSS File ======-->
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+<div class="top-sec">
+  <ul>
+    <li class="divide"><span><i class="fa fa-phone"></i></span>01204 391981</li>
+    <li><span><i class="fa fa-mobile"></i></span>07737 628453</li>
+    <li><a href="javascript:void(0);" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+  </ul>
+</div>
+<!--=== Top Section End Here ===-->
+<div class="nav-sec">
+  <div class="nav-wrapper clearfix">
+    <div class="logo"><a href="javascript:void(0);"><img src="images/logo.png" alt="" title=""></a></div>
+    <div class="mob-nav"><i class="fa fa-bars"></i></div>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="active"><a href="roofing-services.html">Roofing Services</a></li>
+        <li><a href="javascript:void(0);">Pointing Services</a></li>
+        <li><a href="happy-customers.html">Happy Customers</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <!--=== Nav End Here ===--> 
+  </div>
+  <!--=== Nav Wrapper End here ===--> 
+</div>
+<!--=== Nav Section End Here ===-->
+<div class="top-heading">
+  <h2>Roofing <span>Services</span></h2>
+  <div class="bread">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><span>/</span></li>
+      <li>Roofing Services</li>
+    </ul>
+  </div>
+  <!--=== Bread End Here ===--> 
+</div>
+<div class="cont-sec clearfix">
+  <h5>We offer a whole range of roofing services from slated/tiles roofs to guttering, fascia &amp; soffits and chimney building/repairs.  We can also provide a roof &amp; guttering cleaning service at a very competitive price. </h5>
+  
+  <!--=== Services Thumbnail Start Here ===-->
+  <div class="servicesContainer">
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img1-lg.jpg" alt="services-img1">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a> </div>
+        <h4>All roofing work carried out</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img2-lg.jpg" alt="services-img2">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>Slated &amp; tiles roofing &amp; repairs</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img3-lg.jpg" alt="services-img3">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>Pitch roofs &amp; flat roofs</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img4-lg.jpg" alt="services-img4">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>Chimney building/repair</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img5-lg.jpg" alt="services-img5">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>New/replacement guttering</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img6-lg.jpg" alt="services-img6">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>Fascias soffits &amp; cladding replaced</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img7-lg.jpg" alt="services-img7">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>All types of guttering</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img8-lg.jpg" alt="services-img8">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>Leadwork, zinc &amp; metal roofs</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="servicesCol">
+      <div class="img-thumbnail">
+        <div class="img-box"><a href="javascript:void(0);" class="imgModal"><img src="images/services-img9-lg.jpg" alt="services-img9">
+          <div class="searchIcon"><img src="images/search-icon.png" alt="search-icon"></div>
+          </a></div>
+        <h4>Roofs and guttering cleaning</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed blandit massa vel mauris sollicitudin dignissim. 
+          Phasellus ultrices tellus eget ipsum...</p>
+        <p class="readMoreBtn"><a href="javascript:void(0);">Read More <i class="fa fa-angle-double-right"></i></a></p>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="customModal">
+      <div id="thumbImg1" class="modalContainer"> <img src="images/services-img1-lg.jpg" alt="services-img1-lg">
+        <div class="crossBtn"><img src="images/cross-circle.png"></div>
+      </div>
+      <!--<div id="thumbImg2" class="modalContainer"> <img src="images/services-img2-lg.jpg" alt="services-img2-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg1" class="modalContainer"> <img src="images/services-img3-lg.jpg" alt="services-img3-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg2" class="modalContainer"> <img src="images/services-img4-lg.jpg" alt="services-img4-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg1" class="modalContainer"> <img src="images/services-img5-lg.jpg" alt="services-img5-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg2" class="modalContainer"> <img src="images/services-img6-lg.jpg" alt="services-img6-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg1" class="modalContainer"> <img src="images/services-img7-lg.jpg" alt="services-img7-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg2" class="modalContainer"> <img src="images/services-img8-lg.jpg" alt="services-img8-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>
+        <div id="thumbImg2" class="modalContainer"> <img src="images/services-img9-lg.jpg" alt="services-img9-lg">
+          <div class="crossBtn"><img src="images/cross-circle.png"></div>
+        </div>--> 
+    </div>
+  </div>
+  
+  <!--=== Content Section End Here ===--> 
+</div>
+<!--=== Content Section End Here ===-->
+<div class="footer-wrapper">
+  <div class="footer">
+    <div class="footer-div">
+      <h2>SITE LINKS</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="javascript:void(0);">Happy Customers</a></li>
+        <li><a href="javascript:void(0);">Contact Us</a></li>
+      </ul>
+      <h3>Contact US <span><a target="_blank" href="javascript:void(0);"><i class="fa fa-facebook-square"></i></a></span></h3>
+      <p><i class="fa fa-phone"></i>01204 391981</p>
+      <p><i class="fa fa-mobile"></i> 07737 628453</p>
+      <p>Email: <a href="mailto:info@roofingandpointing.co.uk">info@roofingandpointing.co.uk</a></p>
+    </div>
+    <!--=== Footer Div End Here ===-->
+    <div class="footer-div bdr-left">
+      <h2>Roofing Services</h2>
+      <ul>
+        <li><a href="javascript:void(0);">All roofing work carried out</a></li>
+        <li><a href="javascript:void(0);">Slated & tiles roofing & repairs</a></li>
+        <li><a href="javascript:void(0);">Pitch roofs & flat roofs</a></li>
+        <li><a href="javascript:void(0);">Chimney building/repair</a></li>
+        <li><a href="javascript:void(0);">New/replacement guttering</a></li>
+        <li><a href="javascript:void(0);">Fascias soffits & cladding replaced</a></li>
+        <li><a href="javascript:void(0);">All types of guttering</a></li>
+        <li><a href="javascript:void(0);">Leadwork, zinc & metal roofs</a></li>
+        <li><a href="javascript:void(0);">Roofs and guttering cleaning</a></li>
+      </ul>
+    </div>
+    <!--=== Footer Div End Here ===-->
+    <div class="footer-div ex">
+      <h2>Pointing Services </h2>
+      <ul>
+        <li><a href="javascript:void(0);">All pointing work carried out</a></li>
+        <li><a href="javascript:void(0);">Full or part house pointing</a></li>
+        <li><a href="javascript:void(0);">Pitch roofs & flat roofs</a></li>
+        <li><a href="javascript:void(0);">Chimney pointing</a></li>
+        <li><a href="javascript:void(0);">Re-bedding of ridge tiles</a></li>
+      </ul>
+    </div>
+    <!--=== Footer Div End Here ===-->
+    <div class="footer-div ex bdr-left">
+      <h2>AREAS WE COVER</h2>
+      <ul>
+        <li><a href="javascript:void(0);">Bolton</a></li>
+        <li><a href="javascript:void(0);">Manchester</a></li>
+        <li><a href="javascript:void(0);">Wigan</a></li>
+        <li><a href="javascript:void(0);">Preston</a></li>
+        <li><a href="javascript:void(0);">Bury</a></li>
+        <li><a href="javascript:void(0);">Westhoughton</a></li>
+        <li><a href="javascript:void(0);">Horwich</a></li>
+        <li><a href="javascript:void(0);">Blackrod</a></li>
+        <li><a href="javascript:void(0);">Radcliffe</a></li>
+      </ul>
+    </div>
+    <!--=== Footer Div End Here ===--> 
+  </div>
+  <!--=== Footer End Here ===-->
+  <div class="footer-bottom">Copyright © 2015 Andy T. Young Builders. All Rights Reserved</div>
+</div>
+<!--=== Footer Wrapper End Here ===-->
+</body>
+</html>
